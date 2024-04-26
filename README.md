@@ -28,18 +28,18 @@ Use `Dockerfile` and the code in scr directory
 (Use slim or alpine for smaller versions)
 
 ```console
-docker build -t fastapi-image .
-docker run --name fastapi-container -p 80:80 fastapi-image
-docker run -d --name fastapi-container -p 80:80 fastapi-image
+docker build -t kubeskillzapi-image .
+docker run --name kubeskillzapi-container -p 80:80 kubeskillzapi-image
+docker run -d --name kubeskillzapi-container -p 80:80 kubeskillzapi-image
 ```
 ## 3. Immediate file changes (volumes)
 
 ```console
- docker stop fastapi-container
+ docker stop kubeskillzapi-container
  docker ps -a
- docker rm fastapi-container
+ docker rm kubeskillzapi-container
 
- docker run -d --name fastapi-container -p 80:80 -v $(pwd):/codekubeskillz fastapi-image
+ docker run -d --name kubeskillzapi-container -p 80:80 -v $(pwd):/codekubeskillz kubeskillzapi-image
  ```
 ## 4. Use IDE in Docker
 ## 5. Docker Compose
@@ -109,14 +109,6 @@ Attach to running container
  docker run -d  -i --name python_dev python:3.11-slim
  docker exec -it python_dev /bin/sh
 ```
-
-## Further Resources:
-
-- https://towardsdatascience.com/debugging-for-dockerized-ml-applications-in-python-2f7dec30573d
-- https://github.com/Wyntuition/try-python-flask-redis-docker-compose
-- https://docs.docker.com/compose/gettingstarted/
-- https://www.docker.com/blog/containerized-python-development-part-1/
-
 
 ## Other commands for cleaning up
 
